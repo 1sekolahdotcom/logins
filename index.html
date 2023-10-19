@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Login</title>
+    <style>
+        /* CSS Anda di sini */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        /* Akhir CSS */
+
+        /* CSS tambahan untuk tombol */
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            /* Efek hover saat kursor di atas tombol */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginPage">
+        <h2>Silakan Login</h2>
+        <form>
+            Username: <input type="text" id="username" name="username"><br>
+            Password: <input type="password" id="password" name="password"><br>
+            <input type="submit" value="Login" onclick="login()">
+        </form>
+    </div>
+
+    <div id="contentA" style="display: none;">
+        <!-- Isi dari linkA.html -->
+        <h2>Selamat datang di Link A</h2>
+        <p>Ini adalah konten dari Link A.</p>
+    </div>
+
+    <div id="contentB" style="display: none;">
+        <!-- Isi dari linkB.html -->
+        <h2>Selamat datang di Link B</h2>
+        <p>Ini adalah konten dari Link B.</p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var loginPage = document.getElementById('loginPage');
+
+            if (username === 'ikan' && password === '111') {
+                // Tampilkan konten Link A jika login berhasil
+                document.getElementById('contentA').style.display = 'block';
+                loginPage.style.display = 'none';
+            } else if (username === 'ayam' && password === '222') {
+                // Tampilkan konten Link B jika login berhasil
+                document.getElementById('contentB').style.display = 'block';
+                loginPage.style display = 'none';
+            } else {
+                alert('Username atau password salah. Silakan coba lagi.');
+            }
+        }
+    </script>
+</body>
+</html>
